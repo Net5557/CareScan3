@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareScan</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f7f7f7;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            margin-bottom: 30px;
+        }
+
+        .card {
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+        }
+
+        #uploadedImage,
+        #cameraPreview {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        #result {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .custom-file-label::after {
+            content: "Browse";
+        }
+
+        #videoContainer {
+            margin-top: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #cameraPreview {
+            display: none;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(180deg, #0d6efd, #00c6ff);
+            height: 10vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #myBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            border: none;
+            outline: none;
+            background-color: #0d6efd;
+            color: white;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 15px;
+            font-size: 18px;
+        }
+
+        #myBtn:hover {
+            background-color: #0d6efd;
+        }
+
+        .wound-info {
+            margin-top: 30px;
+        }
+
+        .wound-info h3 {
+            color: #0d6efd;
+        }
+
+        .wound-info img {
+            max-width: 200px;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">✚ CareScan</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="http://127.0.0.1:8000">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="data.html">Wound Types</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mb-4">
+        <img src="/static/pic/mednu_04.jpg" class="rounded shadow-sm w-100"></img>
+    </div>
+    <div class="container">
+        <div class="card wound-info">
+            <h3>Understanding Different Wound Types</h3>
+            <p>Different types of wounds require different care. Here are some common types of wounds:</p>
+            <h4>1. Abrasions</h4>
+            <img src="https://my.clevelandclinic.org/-/scassets/images/org/health/articles/25079-abrasion"
+                alt="Abrasion Example">
+            <p>Abrasions are superficial wounds caused by rubbing or scraping against a rough surface. Clean the wound
+                and apply an antibiotic ointment to prevent infection.</p>
+
+            <h4>2. Lacerations</h4>
+            <img src="https://med.pdn.ac.lk/departments/forensic/self-learning/lacer.jpg" alt="Laceration Example">
+            <p>Lacerations are deep cuts or tears in the skin. Depending on the depth, stitches may be required. Always
+                keep the wound clean and covered.</p>
+
+            <h4>3. Bruises</h4>
+            <img src="https://as2.ftcdn.net/v2/jpg/01/27/77/03/1000_F_127770396_0zITBTcZAPibcgOchua0do9A1odOeyBU.jpg"
+                alt="Bruises Example">
+            <p>Bruises wound or injury where the small blood vessels (capillaries) under the skin are damaged, usually
+                due to a blunt force or impact. This damage causes blood to leak out of the vessels and accumulate under
+                the skin, leading to the characteristic discoloration.</p>
+
+            <h4>4. Burns</h4>
+            <img src="https://drzaydon.com/wp-content/uploads/2022/07/burns-1024x981.png" alt="Burn Example">
+            <p>Burns can vary in severity. For minor burns, cool the area with water and cover it with a sterile
+                dressing. Severe burns require immediate medical attention.</p>
+
+            <h4>5. Cut</h4>
+            <img src="https://drzaydon.com/wp-content/uploads/2022/07/burns-1024x981.png" alt="Burn Example">
+            <p>Cut wound, also known as a laceration, is a type of injury where the skin, and sometimes the underlying
+                tissues, are sliced or torn. Cuts can vary in depth and severity, ranging from minor surface wounds to
+                deeper injuries that may affect muscles, tendons, or even bones.</p>
+
+            <h4>6. Ingrown nails</h4>
+            <img src="https://drzaydon.com/wp-content/uploads/2022/07/burns-1024x981.png" alt="Burn Example">
+            <p>Ingrown nail is a condition where the edge of a toenail (or fingernail, though less common) grows into
+                the surrounding skin instead of over it. This can lead to pain, redness, swelling, and sometimes
+                infection in the affected area.</p>
+
+            <h4>7. Stab wound</h4>
+            <img src="https://drzaydon.com/wp-content/uploads/2022/07/burns-1024x981.png" alt="Burn Example">
+            <p>Stab wound is a type of penetrating injury caused by a sharp object, such as a knife, ice pick, or other
+                pointed instruments, that enters the body. Stab wounds can vary in severity depending on the depth,
+                location, and the organs or structures affected by the injury.</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <p class="col-md-4 mb-0 text-muted">&copy; 2024 CareScan, Inc</p>
+
+            <ul class="nav col-md-4 justify-content-end">
+                <li class="nav-item"><a href="http://127.0.0.1:8000" class="nav-link px-2 text-muted">Home</a></li>
+                <li class="nav-item"><a href="data.html" class="nav-link px-2 text-muted">Wound Types</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link px-2 text-muted">Contact</a></li>
+                <li class="nav-item"><a href="map.html" class="nav-link px-2 text-muted">About</a></li>
+            </ul>
+        </footer>
+    </div>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">⇧</button>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="/static/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
